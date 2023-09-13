@@ -34,6 +34,8 @@ public class KodiController {
     @GetMapping("/radio-france-inter")  public ResponseEntity<String> radioFranceInter(@RequestParam(value = "token") String token) {   return doRequest(token, PAYLOAD_RADIO_FRANCE_INTER); }
 
     @GetMapping("/playlist-tous")       public ResponseEntity<String> playlistTous(@RequestParam(value = "token") String token) {       return doRequest(token, PAYLOAD_PLAYLIST_TOUS); }
+    @GetMapping("/playlist-albums")     public ResponseEntity<String> playlistAlbums(@RequestParam(value = "token") String token) {     return doRequest(token, PAYLOAD_PLAYLIST_ALBUMS); }
+    @GetMapping("/playlist-generiques") public ResponseEntity<String> playlistGeneriques(@RequestParam(value = "token") String token) { return doRequest(token, PAYLOAD_PLAYLIST_OST); }
     @GetMapping("/playlist-classical")  public ResponseEntity<String> playlistClassical(@RequestParam(value = "token") String token) {  return doRequest(token, PAYLOAD_PLAYLIST_CLASSICAL); }
     @GetMapping("/playlist-disney")     public ResponseEntity<String> playlistDisney(@RequestParam(value = "token") String token) {     return doRequest(token, PAYLOAD_PLAYLIST_DISNEY);    }
     @GetMapping("/playlist-victor")     public ResponseEntity<String> playlistVictor(@RequestParam(value = "token") String token) {     return doRequest(token, PAYLOAD_PLAYLIST_VICTOR);    }
