@@ -1,14 +1,14 @@
 # spring-gateway
-A simple GET gateway accessible from outside to control LAN things
+A simple GET gateway accessible from outside to control LAN things or VirtualSmartHome switches.
 
 # Architecture
 
 ![rest-gw-flows.drawio.png](doc%2Frest-gw-flows.drawio.png)
 
-# Connection with Kodi media center and Alexa
+# Connection with Alexa
 
 Add skill `URL Switch` to your Alexa account, then configure your 'switches' from the [plugin website](https://www.virtualsmarthome.xyz/url_switch).
-The switches will be recognized automatically by Alexa, you just have to tell `switch on` or `switch off` your switch-name.
+The switches will be recognized automatically by Alexa, you just have to tell `switch on`, `switch off` or `trigger routine` your switch-name.
 
 # How to build
 

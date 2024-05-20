@@ -1,6 +1,18 @@
 project:
-  token: <custom_token>
   http:
     connect-timeout: 3
   kodi:
+    token: <custom_token>
     url: "http://192.168.x.x:xxxx/jsonrpc"
+  solaredge:
+    site_id: <your_site_id>
+    token: <custom_token>
+    currentPowerFlow:
+      triggerOffThreshold: 0.80
+      triggerOffUrl: <url_to_call_if threshold_below_limit>
+      triggerOnThreshold: 1.80
+      triggerOnUrl: <url_to_call_if threshold_above_limit>
+    url:
+      root: "https://monitoringapi.solaredge.com"
+      currentPowerFlow: "/site/%SITE_ID%/currentPowerFlow"
+

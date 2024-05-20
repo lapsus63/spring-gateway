@@ -1,0 +1,161 @@
+{
+  "playpause": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.PlayPause",
+      "params": {
+        "playerid": 0
+      }
+    }
+  ],
+  "stop": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.Stop",
+      "params": {
+        "playerid": 0
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Playlist.Clear",
+      "params": {
+        "playerid": 0
+      }
+    }
+  ],
+  "volup": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "increment"
+      }
+    },{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "increment"
+      }
+    },{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "increment"
+      }
+    }
+  ],
+  "voldown": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "decrement"
+      }
+    },{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "decrement"
+      }
+    },{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Application.SetVolume",
+      "params": {
+        "vomume": "decrement"
+      }
+    }
+  ],
+  "playlists": {
+    "all": "special://profile/playlists/music/playlist-all.xsp",
+  },
+  "radios": {
+    "campus": "https://live.radio-campus.org:8002/clermont-ferrand"
+  },
+
+  "playlist-template": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.Stop",
+      "params": {
+        "playerid": 0
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Playlist.Clear",
+      "params": {
+        "playerid": 0
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.SetShuffle",
+      "params": {
+        "playerid": 0,
+        "shuffle": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Playlist.Add",
+      "params": {
+        "playlistid": 0,
+        "item": {
+          "directory": "%URL%"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.Open",
+      "params": {
+        "playlistid": 0,
+        "position": 0
+      }
+    }
+  ],
+
+  "radio-template": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.Stop",
+      "params": {
+        "playerid": 0
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Playlist.Clear",
+      "params": {
+        "playerid": 0
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.Open",
+      "params": {
+        "item": {
+          "file": "%URL%"
+        }
+      }
+    }
+  ]
+}

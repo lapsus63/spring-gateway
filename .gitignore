@@ -1,5 +1,6 @@
 # sensitive files
 application.yml
+kodi_payloads.json
 
 # Compiled class file
 *.class

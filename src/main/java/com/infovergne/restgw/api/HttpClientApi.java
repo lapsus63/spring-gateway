@@ -1,7 +1,11 @@
 package com.infovergne.restgw.api;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.net.URI;
@@ -18,6 +22,8 @@ import java.time.temporal.ChronoUnit;
 @Component
 public class HttpClientApi {
 
+    private static final Log logger = LogFactory.getLog(HttpClientApi.class);
+
     @Value("${project.http.connect-timeout}")
     private Long connectTimeout;
 
@@ -32,4 +38,22 @@ public class HttpClientApi {
                 .build();
         client.send(request, HttpResponse.BodyHandlers.ofString());
     }
+
+    public HttpResponse<String> get(String serviceUrl, String... headers) throws Exception {
+
+        HttpClient client = HttpClient.newBuilder()
+                .connectTimeout(Duration.of(connectTimeout, ChronoUnit.SECONDS))
+                .build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(serviceUrl))
+                .headers(ArrayUtils.addAll(headers, ArrayUtils.toArray("User-Agent", "Java")))
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        if (!HttpStatus.resolve(response.statusCode()).is2xxSuccessful()) {
+            logger.error(String.format("Unsuccessful API access. Error %s: %s", response.statusCode(), response.body()));
+        }
+        return response;
+    }
+
 }
