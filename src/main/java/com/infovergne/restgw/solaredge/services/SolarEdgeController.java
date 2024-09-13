@@ -2,8 +2,8 @@ package com.infovergne.restgw.solaredge.services;
 
 
 import com.infovergne.restgw.api.HttpClientApi;
-import com.infovergne.restgw.kodi.config.KodiConfig;
 import com.infovergne.restgw.solaredge.SolarEdgeScheduler;
+import com.infovergne.restgw.solaredge.config.SolarEdgeConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -20,11 +20,11 @@ public class SolarEdgeController {
 
     private static final Log logger = LogFactory.getLog(SolarEdgeController.class);
 
-    private final KodiConfig conf;
+    private final SolarEdgeConfig conf;
 
     private final HttpClientApi httpClientApi;
 
-    public SolarEdgeController(KodiConfig conf, HttpClientApi httpClientApi) {
+    public SolarEdgeController(SolarEdgeConfig conf, HttpClientApi httpClientApi) {
         this.conf = conf;
         this.httpClientApi = httpClientApi;
     }
