@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @ConditionalOnProperty(name = "project.kodi.token")
 public class KodiController {
-
     private final KodiConfig conf;
+
 
     private final HttpClientApi httpClientApi;
 
