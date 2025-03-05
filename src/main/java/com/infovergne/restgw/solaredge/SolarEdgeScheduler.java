@@ -27,7 +27,7 @@ public class SolarEdgeScheduler {
 
     private static final Log logger = LogFactory.getLog(SolarEdgeScheduler.class);
 
-    public static boolean SOLAR_EDGE_ACTIVE = true;
+    public static boolean SOLAR_EDGE_ACTIVE = false;
 
     private final HttpClientApi httpClient;
 

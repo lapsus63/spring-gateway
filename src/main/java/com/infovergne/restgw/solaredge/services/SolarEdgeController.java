@@ -39,6 +39,16 @@ public class SolarEdgeController {
         return response;
     }
 
+    @GetMapping("/solaredge/status")
+    public ResponseEntity<String> solarEdgeStatus(@RequestParam(value = "token") String token) {
+        ResponseEntity<String> response = prepareRequest(token);
+        if (response.getStatusCode().is2xxSuccessful()) {
+            response = ResponseEntity.ok(""+SolarEdgeScheduler.SOLAR_EDGE_ACTIVE);
+        }
+        return response;
+    }
+
+
     @GetMapping("/solaredge/off")
     public ResponseEntity<String> solarEdgeDesactivation(@RequestParam(value = "token") String token) {
         ResponseEntity<String> response = prepareRequest(token);
