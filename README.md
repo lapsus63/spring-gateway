@@ -5,6 +5,11 @@ A simple GET gateway accessible from outside to control LAN things or VirtualSma
 
 ![rest-gw-flows.drawio.png](doc%2Frest-gw-flows.drawio.png)
 
+# Connection with Kodi
+
+- See locally JSON RPC specifications from `http://your.kodi.url:8080/jsonrpc`
+- See also https://kodi.wiki/view/JSON-RPC_API/v12
+
 # Connection with Alexa
 
 Add skill `URL Switch` to your Alexa account, then configure your 'switches' from the [plugin website](https://www.virtualsmarthome.xyz/url_switch).

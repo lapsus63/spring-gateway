@@ -27,7 +27,7 @@ public class HttpClientApi {
     @Value("${project.http.connect-timeout}")
     private Long connectTimeout;
 
-    public void post(String serviceUrl, JSONArray payload) throws Exception {
+    public HttpResponse<String> post(String serviceUrl, JSONArray payload) throws Exception {
 
         HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(Duration.of(connectTimeout, ChronoUnit.SECONDS))
@@ -36,7 +36,11 @@ public class HttpClientApi {
                 .uri(URI.create(serviceUrl))
                 .POST(HttpRequest.BodyPublishers.ofString(payload.toString(), StandardCharsets.UTF_8))
                 .build();
-        client.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        if (!HttpStatus.resolve(response.statusCode()).is2xxSuccessful()) {
+            logger.error(String.format("Unsuccessful API access. Error %s: %s", response.statusCode(), response.body()));
+        }
+        return response;
     }
 
     public HttpResponse<String> get(String serviceUrl, String... headers) throws Exception {

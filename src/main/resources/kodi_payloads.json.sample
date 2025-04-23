@@ -9,6 +9,28 @@
       }
     }
   ],
+  "previous": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.GoTo",
+      "params": {
+        "playerid": 1,
+        "to": "previous"
+      }
+    }
+  ],
+  "next": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "Player.GoTo",
+      "params": {
+        "playerid": 1,
+        "to": "next"
+      }
+    }
+  ],
   "stop": [
     {
       "jsonrpc": "2.0",
