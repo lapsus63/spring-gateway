@@ -1,0 +1,4 @@
+project:
+  kodi:
+    token: "MY_TOKEN"
+    url: "http://kodi.url/jsonrpc"

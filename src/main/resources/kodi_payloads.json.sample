@@ -84,73 +84,74 @@
 
   "playlist-template": [
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Player.Stop",
+      "id": 1,
+      "jsonrpc": "2.0",
       "params": {
-        "playerid": 0
+        "playerid": 1
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Playlist.Clear",
+      "id": 2,
+      "jsonrpc": "2.0",
       "params": {
-        "playerid": 0
+        "playlistid": 1
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Player.SetShuffle",
+      "id": 3,
+      "jsonrpc": "2.0",
       "params": {
-        "playerid": 0,
-        "shuffle": true
+        "shuffle": true,
+        "playerid": 1
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Playlist.Add",
+      "id": 4,
+      "jsonrpc": "2.0",
       "params": {
-        "playlistid": 0,
+        "playlistid": 1,
         "item": {
           "directory": "%URL%"
         }
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Player.Open",
+      "id": 5,
+      "jsonrpc": "2.0",
       "params": {
-        "playlistid": 0,
-        "position": 0
+        "item": {
+          "playlistid": 1
+        }
       }
     }
   ],
 
   "radio-template": [
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Player.Stop",
+      "id": 1,
+      "jsonrpc": "2.0",
       "params": {
-        "playerid": 0
+        "playerid": 1
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Playlist.Clear",
+      "id": 2,
+      "jsonrpc": "2.0",
       "params": {
-        "playerid": 0
+        "playerid": 1
       }
     },
     {
-      "jsonrpc": "2.0",
-      "id": 1,
       "method": "Player.Open",
+      "id": 3,
+      "jsonrpc": "2.0",
       "params": {
         "item": {
           "file": "%URL%"
